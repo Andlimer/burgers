@@ -1,0 +1,38 @@
+.paginator {
+  position: fixed;
+  top: 13.5%;
+  right: 4.5%;
+  z-index: 5;
+
+  @include tablets {
+    display: none;
+  }
+}
+
+.paginator__dot {
+  display: block;
+  width: rem(16px);
+  height: rem(16px);
+  margin-bottom: rem(5px);
+  border: rem(1px) solid transparent;
+  border-radius: 50%;
+  position: relative;
+}
+
+.paginator__dot:after {
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 50%;
+  width: rem(6px);
+  height: rem(6px);
+  background-color: $white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.paginator__item_active {
+  .paginator__dot {
+    border-color: $white;
+  }
+}

@@ -1,0 +1,88 @@
+.composition {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  @include tablets {
+    left: rem(86px);
+  }
+
+  @include phones {
+    left: 0;
+    right: auto;
+    bottom: auto;
+  }
+}
+
+.composition__button {
+  @include gagalin();
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: rem(90px);
+  height: rem(90px);
+  font-size: rem(14px);
+  background-color: $orange;
+  border-radius: rem(5px);
+  transition: .4s;
+
+  &:hover {
+    background-color: $button-color;
+  }
+}
+
+.composition__burger-icon {
+  width: rem(46px);
+  height: rem(44px);
+  margin-bottom: rem(6px);
+}
+
+.composition__content {
+  width: rem(270px);
+  padding: rem(20px);
+  background-color: $white;
+  color: $black;
+  border-radius: rem(5px);
+  transform: translateX(rem(-999999px));
+  opacity: 0;
+  transition: opacity .4s;
+
+  @include tablets {
+
+  }
+}
+
+.composition__button:hover ~
+.composition__content {
+  transform: translateX(0);
+  opacity: .9;
+}
+
+.composition__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: rem(15px);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.composition__stuffing {
+  display: flex;
+  align-items: center;
+}
+
+.composition__icon {
+  width: rem(44px);
+  height: rem(43px);
+  margin-right: rem(20px);
+}
+
+// !!!!!!!!!!!!!!!!!
+.composition__close .close__icon {
+  fill: #e35028;
+}

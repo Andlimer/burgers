@@ -1,0 +1,29 @@
+$black: #2f3234;
+$white: #fff;
+$yellow: #f9b43b;
+$orange: #eb8c38;
+$button-color: #e45028;
+
+@import 'layout/normalize';
+@import 'layout/fonts';
+@import 'layout/media';
+@import 'layout/interface';
+
+@import 'blocks/close';
+@import 'blocks/header';
+@import 'blocks/nav';
+@import 'blocks/hero';
+@import 'blocks/about';
+@import 'blocks/burgers';
+@import 'blocks/slider';
+@import 'blocks/composition';
+@import 'blocks/calories';
+@import 'blocks/team';
+@import 'blocks/menu';
+@import 'blocks/reviews';
+@import 'blocks/form-section';
+@import 'blocks/social';
+@import 'blocks/footer';
+@import 'blocks/paginator';
+@import 'blocks/burger-menu';
+@import 'blocks/popup';

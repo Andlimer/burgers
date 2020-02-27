@@ -1,0 +1,143 @@
+.team {
+  background: url('../img/bg/team-bg.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.team__block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  background-color: #2f3234;
+  opacity: .9;
+
+  @include tablets {
+    width: 100%;
+  }
+}
+
+.team__title {
+  margin-top: 25%;
+  margin-bottom: rem(50px);
+}
+
+// .team-accordeon {
+
+// }
+
+.team-accordeon__item {
+  margin-bottom: rem(35px);
+}
+
+.team-accordeon__trigger {
+  @include gagalin();
+  display: flex;
+  align-items: center;
+  font-size: rem(14px);
+  text-decoration: none;
+  color: $white;
+
+  @include tablets {
+    font-size: rem(25px);
+    justify-content: center;
+  }
+}
+
+.team-accordeon__trigger:before {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-right: rem(10px);
+  border: 7px solid transparent;
+  border-top-color: $yellow;
+  border-bottom: 0;
+}
+
+.team-accordeon__block {
+  display: flex;
+  height: 0;
+  margin-top: 0;
+  overflow: hidden;
+  transition: height 0.5s, margin-top 0.5s;
+
+  @include tablets {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.team-accordeon__image {
+  width: rem(100px);
+  height: rem(100px);
+  margin-right: rem(20px);
+  border-radius: 50%;
+  overflow: hidden;
+  opacity: 0;
+
+  @include tablets {
+    margin-right: 0;
+    margin-bottom: rem(20px);
+  }
+}
+
+.team-accordeon__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.team-accordeon__desc {
+  width: rem(210px);
+  font-size: rem(14px);
+  opacity: 0;
+
+  @include tablets {
+    width: rem(340px);
+    text-align: center;
+  }
+}
+
+.team-accordeon__vocation {
+  @include ubuntu($style: bold);
+  margin-bottom: rem(15px);
+  line-height: 1;
+}
+
+.team-accordeon__text {
+  @include ubuntu($style: light);
+  line-height: rem(24px);
+}
+
+.team-accordeon__item_active {
+  .team-accordeon__block {
+    height: rem(103px);
+    margin-top: rem(17px);
+
+    @include tablets {
+      height: rem(203px);
+    }
+  }
+
+  .team-accordeon__image, 
+  .team-accordeon__desc {
+    opacity: 1;
+    transition: opacity .1s .4s;
+  }
+
+  .team-accordeon__trigger {
+    color: $yellow;
+  }
+
+  .team-accordeon__trigger:before {
+    border: 7px solid transparent;
+    border-bottom-color: $yellow;
+  }
+}

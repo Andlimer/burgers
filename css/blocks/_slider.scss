@@ -1,0 +1,93 @@
+.slider {
+  height: 55%;
+  overflow: hidden;
+
+  @include tablets {
+    height: 90%;
+  }
+}
+
+.slider__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500%; // временно
+  height: 100%;
+  position: relative;
+  transition: right .5s;
+}
+
+.slider__item {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  @include tablets {
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+  }
+
+  @include phones {
+    width: 100%;
+  }
+}
+
+.slider__left,
+.slider__right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+
+  @include tablets {
+    width: 100%;
+  }
+}
+
+.slider__left {
+  margin-right: rem(25px);
+
+  @include tablets {
+    margin-right: 0;
+    margin-bottom: rem(20px);
+  }
+}
+
+.slider__right {
+  @include tablets {
+    text-align: center;
+  }
+}
+
+.slider__image {
+  max-width: 100%;
+}
+
+.slider__title {
+  margin-bottom: rem(40px);
+}
+
+.slider__text {
+  margin-bottom: rem(20px);
+  font-size: rem(14px);
+  line-height: rem(23.97px);
+}
+
+.slider__order {
+  @include gagalin();
+  width: 100%;
+  font-size: rem(30px);
+  color: $button-color;
+}
+
+.slider__price {
+  margin-right: rem(20px);
+}
+
+.slider__money {
+  margin-right: rem(5px);
+  font-size: rem(72px);
+}

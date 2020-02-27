@@ -1,0 +1,128 @@
+.menu {
+  display: block;
+  background: url('../img/bg/menu-bg.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.menu__title {
+  position: absolute;
+  top: 13%;
+  left: 9%;
+}
+
+.menu-accordeon {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  transition: right .4s;
+}
+
+.menu-accordeon__item {
+  display: flex;
+}
+
+.menu-accordeon__trigger {
+  position: relative;
+  display: block;
+  padding: rem(25px) rem(40px);
+}
+
+.menu-accordeon__trigger:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .7);
+}
+
+.menu-accordeon__trigger_meet {
+  background: url('../img/bg/menu-meet.jpg') center center / cover no-repeat;
+}
+
+.menu-accordeon__trigger_vegan {
+  background: url('../img/bg/menu-vegan.jpg') center center / cover no-repeat;
+}
+
+.menu-accordeon__trigger_dietic {
+  background: url('../img/bg/menu-dietic.jpg') center center / cover no-repeat;
+}
+
+.menu-accordeon__title {
+  @include gagalin();
+  font-size: rem(40px);
+  color: $white;
+  position: absolute;
+  top: 95%;
+  left: 50%;
+  white-space: nowrap;
+  transform: rotate(-90deg) translateY(-50%);
+  transform-origin: 0 0;
+}
+
+.menu-accordeon__content {
+  width: 0;
+  overflow: hidden;
+  background-color: $black;
+  opacity: 0.93;
+  transition: width .5s;
+  position: relative;
+}
+
+.menu-accordeon__text {
+  @include ubuntu($style: light);
+  padding: rem(60px) rem(35px);
+  font-size: rem(14px);
+  line-height: rem(24px);
+  opacity: 0;
+}
+
+.menu-accordeon__close {
+  display: none;
+  position: absolute;
+  top: rem(30px);
+  right: rem(30px);
+  opacity: 0;
+
+  @include phones {
+    display: block;
+  }
+}
+
+.menu-accordeon__icon {
+  width: rem(20px);
+  height: rem(20px);
+  fill: $white;
+}
+
+.menu-accordeon__item_active {
+  .menu-accordeon__title {
+    color: $yellow;
+  }
+
+  .menu-accordeon__text {
+    opacity: 1;
+    transition: opacity .1s .4s;
+  }
+
+  .menu-accordeon__close {
+    @include phones {
+      opacity: 0.7;
+      transition: opacity .1s .4s;
+    }
+  }
+
+  // @include phones {
+  //   position: absolute;
+  //   right: 0;
+  //   width: 100vw;
+  //   height: 100%;
+  //   z-index: 10;
+  // }
+}

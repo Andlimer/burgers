@@ -1,0 +1,66 @@
+.map {
+  // height: 100vh;
+  background: url('../img/bg/map-bg.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding-top: rem(10px);
+  padding-bottom: rem(12px);
+  background: url('../img/bg/footer-bg.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @include phones {
+    padding: rem(20px) 0;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include phones {
+      flex-direction: column;
+    }
+  }
+
+  &__left {
+    @include phones {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: rem(20px);
+    }
+  }
+
+  &__adress {
+    @include ubuntu($style: light);
+    margin-bottom: rem(7px);
+    font-size: rem(14px);
+    line-height: 1;
+  }
+
+  &__phone-icon {
+    margin-right: rem(5px);
+    width: rem(12px);
+    height: rem(11px);
+    fill: $button-color;
+  }
+
+  &__link {
+    @include ubuntu($style: bold);
+    font-size: rem(14px);
+    color: $button-color;
+    text-decoration: none;
+  }
+}

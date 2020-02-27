@@ -1,0 +1,47 @@
+.calories {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: rem(60px);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  opacity: 0.5;
+
+  @include tablets {
+    left: auto;
+    top: 0;
+    right: rem(86px);
+    bottom: auto;
+  }
+
+  @include phones {
+    right: 0;
+  }
+}
+
+.calories__icon {
+  @include gagalin();
+  margin-bottom: rem(5px);
+  width: rem(60px);
+  height: rem(60px);
+  font-size: rem(20px);
+  position: relative;
+}
+
+.calories__kkal-icon {
+  width: 100%;
+  height: 100%;
+}
+
+.calories__kkal-number {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.calories__kkal {
+  @include gagalin();
+  font-size: rem(14px);
+}

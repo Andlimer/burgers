@@ -1,0 +1,27 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: rem(12px);
+  z-index: 1;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo-icon {
+    width: rem(92px);
+    height: rem(69px);
+  }
+
+  &__block {
+    display: flex;
+    align-items: center;
+  }
+}

@@ -1,0 +1,23 @@
+.burgers {
+  background-image: linear-gradient(to top, $yellow 0%, $orange 48%, $yellow 74%, $yellow 100%);
+}
+
+.burgers__container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+}
+
+.burgers__arrow {
+  width: rem(27px);
+  height: rem(13px);
+}
+
+.burgers__arrow_left {
+  transform: rotate(90deg)
+}
+
+.burgers__arrow_right {
+  transform: rotate(-90deg)
+}

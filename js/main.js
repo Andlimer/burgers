@@ -6,13 +6,13 @@ const burgerMenu = () => {
 
   burgerMenuBtn.addEventListener('click', () => {
     event.preventDefault();
-    burgerMenu.style.display = 'flex';
+    burgerMenu.classList.add('burger-menu_active');
     document.body.style.overflow = 'hidden';
   });
 
   burgerMenuClose.addEventListener('click', () => {
     event.preventDefault();
-    burgerMenu.style.display = 'none';
+    burgerMenu.classList.remove('burger-menu_active');
     document.body.style.overflow = 'visible';
   });
 };
@@ -175,17 +175,12 @@ slider();
 const togglePopUpRevievs = () => {
   const popUp = document.querySelectorAll('.popup'),
     popUpBtn = document.querySelectorAll('.popup-button'),
-    // popUpModal = document.querySelector('.popup-modal'),
     popUpRevievs = document.querySelector('.popup-revievs');
 
   popUpBtn.forEach((elem) => {
     elem.addEventListener('click', (event) => {
       event.preventDefault();
       let target = event.target;
-
-      // if (target.classList.contains('modal-button')) {
-      //   popUpModal.style.display = 'flex'; 
-      // }
 
       if (target.classList.contains('reviews__btn')) {
         popUpRevievs.style.display = 'flex';
@@ -268,9 +263,6 @@ const sendForm = () => {
 
       randomSend();
 
-      // xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
-      // xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail/fail');
-
       xhr.send(formData);
 
       xhr.addEventListener('load', () => {
@@ -306,12 +298,11 @@ const sendForm = () => {
 
   const validateField = (input) => {
     if (!input.checkValidity()) {
-      input.nextElementSibling.textContent = input.validationMessage;
-      input.nextElementSibling.style.cssText = 'font-size: 14px; color: red;';
+      input.parentElement.classList.add('form__block_error');
       return false;
 
     } else {
-      input.nextElementSibling.textContent = '';
+      input.parentElement.classList.remove('form__block_error');
       return true;
     }
   };

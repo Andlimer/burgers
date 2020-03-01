@@ -1,100 +1,94 @@
-.reviews {
-  &__list {
+.reviews__list {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+.reviews__item {
+  width: 25%;
+  height: 50%;
+  position: relative;
+  filter: grayscale(100%);
+
+  @include tablets {
+    width: 50%;
+    height: 25%;
+  }
+
+  &:hover {
+    .reviews__hover {
+      opacity: 1;
+    }
+  }
+}
+
+.reviews__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.reviews__hover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: rem(50px) rem(20px);
+  font-size: rem(14px);
+  background-color: rgba($black, .7);
+  color: $white;
+  opacity: 0;
+  transition: opacity .4s;
+
+  @include tablets {
     display: flex;
-    flex-wrap: wrap;
-    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 rem(20px);
+  }
+}
+
+.reviews__name {
+  @include gagalin();
+  margin-bottom: rem(23px);
+
+  @include phones {
+    text-align: center;
+    font-size: rem(24px);
+    line-height: rem(28px);
+  }
+}
+
+.reviews__text {
+  margin-bottom: rem(10px);
+}
+
+.reviews__text p {
+  @include ubuntu($style: light);
+  line-height: rem(24px);
+
+  @include tablets {
+    text-align: center;
   }
 
-  &__item {
-    width: 25%;
-    height: 50%;
-    position: relative;
-    filter: grayscale(100%);
-
-    @include tablets {
-      width: 50%;
-      height: 25%;
-    }
-
-    &:hover {
-      .reviews__hover {
-        opacity: 1;
-      }
-    }
+  @include phones {
+    display: none;
   }
+}
 
-  &__photo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.reviews__btn {
+
+  @include phones {
+    display: none;
   }
-
-  &__hover {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding: rem(50px) rem(20px);
-    font-size: rem(14px);
-    background-color: rgba($black, .7);
-    color: $white;
-    opacity: 0;
-    transition: opacity .4s;
-
-    @include tablets {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: rem(35px) rem(54px) rem(20px);
-    }
+  
+  &_phone {
+    display: none;
 
     @include phones {
-      padding: rem(45px) rem(56px);
-    }
-  }
-
-  &__name {
-    @include gagalin();
-    margin-bottom: rem(23px);
-
-    @include phones {
-      text-align: center;
-      font-size: rem(24px);
-      line-height: rem(28px);
-    }
-  }
-
-  &__text {
-    margin-bottom: rem(10px);
-  }
-
-  &__text p {
-    @include ubuntu($style: light);
-    line-height: rem(24px);
-
-    @include tablets {
-      text-align: center;
-    }
-
-    @include phones {
-      display: none;
-    }
-  }
-
-  &__btn {
-
-    @include phones {
-      display: none;
-    }
-    
-    &_phone {
-      display: none;
-
-      @include phones {
-        display: block;
-      }
+      display: block;
     }
   }
 }

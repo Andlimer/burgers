@@ -5,66 +5,67 @@
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+}
 
-  &__block {
-    display: flex;
-    align-items: center;
+.hero__block {
+  display: flex;
+  align-items: center;
 
-    @include tablets {
-      flex-direction: column;
-      padding: 0 18%;
-    }
-
-    @include phones {
-      padding: 0 9%;
-    }
+  @include tablets {
+    flex-direction: column;
+    padding: 0 18%;
   }
 
-  &__image {
-    width: 100%;
-    margin-right: rem(11px);
-
-    @include tablets {
-      margin-right: 0;
-    }
+  @include phones {
+    padding: 0 9%;
   }
+}
 
-  &__title {
-    padding-top: rem(75px);
+.hero__image {
+  width: 100%;
+  margin-right: rem(11px);
 
-    @include tablets {
-      padding-top: 0;
-      margin-top: rem(30px);
-      text-align: center;
-    }
-
-    @include phones {
-      padding-top: rem(42px);
-    }
+  @include tablets {
+    margin-right: 0;
   }
+}
 
-  &__subtitle {
-    @include lifehack();
+.hero__title {
+  padding-top: rem(75px);
+
+  @include tablets {
+    padding-top: 0;
     margin-top: rem(30px);
-    font-size: rem(65px);
-    color: $white;
-    line-height: 1;
-
-    @include phones {
-      font-size: rem(54px);
-    }
+    text-align: center;
   }
 
-  &__scroll-btn {
-    display: block;
-    position: absolute;
-    left: 50%;
-    bottom: rem(40px);
-    transform: translateX(-50%);
+  @include phones {
+    margin-top: rem(42px);
+  }
+}
 
-    &-icon {
-      width: rem(29px);
-      height: rem(14px);
-    }
+.hero__subtitle {
+  @include lifehack();
+  display: block;
+  margin-top: rem(30px);
+  font-size: rem(65px);
+  color: $white;
+  line-height: 1;
+
+  @include phones {
+    font-size: rem(54px);
+  }
+}
+
+.hero__scroll-btn {
+  display: block;
+  position: absolute;
+  left: 50%;
+  bottom: rem(40px);
+  transform: translateX(-50%);
+
+  &-icon {
+    width: rem(29px);
+    height: rem(14px);
   }
 }

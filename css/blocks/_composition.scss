@@ -50,7 +50,7 @@
   transition: opacity .4s;
 
   @include tablets {
-
+    width: rem(330px);
   }
 }
 
@@ -58,6 +58,12 @@
 .composition__content {
   transform: translateX(0);
   opacity: .9;
+}
+
+.composition__list {
+  @include tablets {
+    padding-right: rem(60px);
+  }
 }
 
 .composition__item {
@@ -84,5 +90,10 @@
 
 // !!!!!!!!!!!!!!!!!
 .composition__close .close__icon {
+  position: absolute;
+  top: rem(20px);
+  right: rem(20px);
+  width: rem(20px);
+  height: rem(20px);
   fill: #e35028;
 }

@@ -8,68 +8,72 @@
   height: 100%;
   background-color: rgba(47,50,52, 0.9);
   z-index: 25;
+}
 
-  &-modal {
-    // display: flex;
-    display: none;
+.popup-modal {
+  // display: flex;
+  display: none;
+}
 
-    &__content {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      // width: rem(196px);
-      padding: rem(15px);
-      box-shadow: 0 0 rem(40px) rgba(0, 0, 1, 0.5);
-      background-color: $white;
-      border-radius: rem(5px);
-    }
+.popup-modal__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // width: rem(196px);
+  padding: rem(15px);
+  box-shadow: 0 0 rem(40px) rgba(0, 0, 1, 0.5);
+  background-color: $white;
+  border-radius: rem(5px);
+}
 
-    &__text {
-      padding-bottom: rem(17px);
-      font-size: rem(14px);
-      color: $black;
-    }
+.popup-modal__text {
+  padding-bottom: rem(17px);
+  font-size: rem(14px);
+  color: $black;
+}
+
+.popup-revievs {
+  // display: flex;
+  display: none;
+}
+
+.popup-revievs__content {
+  width: rem(460px);
+  padding: rem(20px);
+  color: $black;
+  background-color: $white;
+  border-radius: rem(5px);
+  position: relative;
+
+  @include phones {
+    width: 95%;
   }
+}
 
-  &-revievs {
-    // display: flex;
-    display: none;
+.popup-revievs__title {
+  @include gagalin();
+  margin-bottom: rem(30px);
+  font-size: 14px;
+}
 
-    &__content {
-      width: rem(460px);
-      padding: rem(20px);
-      color: $black;
-      background-color: $white;
-      border-radius: rem(5px);
-      position: relative;
-    }
+.popup-revievs__text {
+  font-size: rem(14px);
+  line-height: rem(24px);
+}
 
-    &__title {
-      @include gagalin();
-      margin-bottom: rem(30px);
-      font-size: 14px;
-    }
+.popup-revievs__button {
+  display: block;
+  position: absolute;
+  top: rem(20px);
+  right: rem(20px);
+  fill: $button-color;
+  opacity: .7;
+}
 
-    &__text {
-      font-size: rem(14px);
-      line-height: rem(24px);
-    }
-
-    &__button {
-      display: block;
-      position: absolute;
-      top: rem(20px);
-      right: rem(20px);
-      fill: $button-color;
-      opacity: .7;
-    }
-
-    &__icon {
-      width: rem(15px);
-      height: rem(15px);
-    }
-  }
+.popup-revievs__icon {
+  width: rem(15px);
+  height: rem(15px);
 }
   
   

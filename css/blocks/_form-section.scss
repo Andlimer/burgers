@@ -3,10 +3,10 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
 
-  &__title {
-    margin-bottom: rem(45px);
-  }
+.form-section__title {
+  margin-bottom: rem(45px);
 }
 
 .form {
@@ -17,113 +17,124 @@
     flex-direction: column;
     align-items: center;
   }
+}
 
-  &__left, 
-  &__right {
-    width: rem(460px);
+.form__left, 
+.form__right {
+  width: rem(460px);
 
-    @include phones {
-      width: 100%;
-    }
-  }
-
-  &__left {
-    margin-right: rem(20px);
-
-    @include tablets {
-      margin-right: 0;
-      margin-bottom: rem(20px);
-    }
-  }
-
-  &__row {
-    display: flex;
-    margin-bottom: rem(20px);
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  &__block {
-    flex: 1;
-    margin-right: rem(20px);
-
-    &:last-child {
-      margin-right: 0;
-    }
-
-    @include phones {
-      &:nth-child(4) {
-        display: none;
-      }
-
-      &:nth-child(3) {
-        margin-right: 0;
-      }
-    }
-  }
-
-  &__block-title {
-    @include ubuntu($style: light);
-    margin-bottom: rem(7px);
-    font-size: rem(14px);
-    line-height: 1;
-  }
-
-  &__input {
-    @include ubuntu($style: light);
+  @include phones {
     width: 100%;
-    padding: rem(8px) rem(20px);
+  }
+}
+
+.form__left {
+  margin-right: rem(20px);
+
+  @include tablets {
+    margin-right: 0;
+    margin-bottom: rem(20px);
+  }
+}
+
+.form__row {
+  display: flex;
+  margin-bottom: rem(20px);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.form__block {
+  position: relative;
+  flex: 1;
+  margin-right: rem(20px);
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @include phones {
+    &:nth-child(4) {
+      display: none;
+    }
+
+    &:nth-child(3) {
+      margin-right: 0;
+    }
+  }
+}
+
+.form__block-title {
+  @include ubuntu($style: light);
+  margin-bottom: rem(7px);
+  font-size: rem(14px);
+  line-height: 1;
+}
+
+.form__input {
+  @include ubuntu($style: light);
+  width: 100%;
+  padding: rem(8px) rem(20px);
+  font-size: rem(14px);
+  border: rem(2px) solid transparent;
+  border-radius: 5px;
+  outline: none;
+
+  &::placeholder {
+    @include ubuntu($style: light);
     font-size: rem(14px);
-    border: rem(2px) solid transparent;
-    border-radius: 5px;
-    outline: none;
-
-    &::placeholder {
-      @include ubuntu($style: light);
-      font-size: rem(14px);
-    }
-
-    &:focus {
-      border-color: $yellow;
-    }
-
-    &_textarea {
-      height: rem(113px);
-      padding: rem(10px);
-      font-size: rem(14px);
-      resize: none;
-    }
   }
 
-  &__footer {
-    @include phones {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+  &:focus {
+    border-color: $yellow;
+  }
+}
+
+.form__input_textarea {
+  height: rem(113px);
+  padding: rem(10px);
+  font-size: rem(14px);
+  resize: none;
+}
+
+.form__block_error {
+  .form__input {
+    border-color: red;
   }
 
-  &__radio {
+  .form__block-title {
+    color: red;
+  }
+}
+
+.form__footer {
+  @include phones {
     display: flex;
+    flex-direction: column;
+    align-items: center;
   }
+}
 
-  &__buttons {
-    @include tablets {
-      margin-top: rem(40px);
-    }
+.form__radio {
+  display: flex;
+}
+
+.form__buttons {
+  @include tablets {
+    margin-top: rem(40px);
   }
+}
 
-  &__button {
-    margin-right: rem(5px);
+.form__button {
+  margin-right: rem(5px);
+}
 
-    &-reset {
-      @include ubuntu($style: light);
-      font-size: rem(14px);
-      color: $white;
-    }
-  }
+.form__button-reset {
+  @include ubuntu($style: light);
+  font-size: rem(14px);
+  color: $white;
 }
 
 .options {
@@ -135,64 +146,64 @@
   &:last-child {
     margin-right: 0;
   }
+}
 
-  &__radio,
-  &__checkbox {
-    display: none;
-  }
+.options__radio,
+.options__checkbox {
+  display: none;
+}
 
-  &__radio:checked ~ 
-  &__radio-style:after,
-  &__checkbox:checked ~ 
-  &__checkbox-style:after {
-    opacity: 1;
-  }
+.options__radio:checked ~ 
+.options__radio-style:after,
+.options__checkbox:checked ~ 
+.options__checkbox-style:after {
+  opacity: 1;
+}
 
-  &__radio-style,
-  &__checkbox-style {
-    display: inline-block;
-    position: relative;
-    width: rem(16px);
-    height: rem(16px);
-    margin-right: rem(10px);
-    background-color: $white;
-  }
+.options__radio-style,
+.options__checkbox-style {
+  display: inline-block;
+  position: relative;
+  width: rem(16px);
+  height: rem(16px);
+  margin-right: rem(10px);
+  background-color: $white;
+}
 
-  &__radio-style {
-    border-radius: 50%;
-  }
+.options__radio-style {
+  border-radius: 50%;
+}
 
-  &__radio-style:after {
-    content: "";
-    display: block;
-    position: absolute;
-    width: rem(7px);
-    height: rem(7px);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    background-color: $button-color;
-    opacity: 0;
-  }
+.options__radio-style:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: rem(7px);
+  height: rem(7px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: $button-color;
+  opacity: 0;
+}
 
-  &__checkbox-style:after {
-    content: "";
-    position: absolute;
-    left: rem(2px);
-    top: rem(3px);
-    width: rem(9px);
-    height: rem(4px);
-    border-radius: 1px;
-    border-left: 3.5px solid $button-color;
-    border-bottom: 3.5px solid $button-color;
-    transform: rotate(-45deg);
-    opacity: 0;
-  }
+.options__checkbox-style:after {
+  content: "";
+  position: absolute;
+  left: rem(2px);
+  top: rem(3px);
+  width: rem(9px);
+  height: rem(4px);
+  border-radius: 1px;
+  border-left: 3.5px solid $button-color;
+  border-bottom: 3.5px solid $button-color;
+  transform: rotate(-45deg);
+  opacity: 0;
+}
 
-  &__title {
-    @include ubuntu($style: light);
-    font-size: rem(14px);
-    line-height: 1;
-  }
+.options__title {
+  @include ubuntu($style: light);
+  font-size: rem(14px);
+  line-height: 1;
 }

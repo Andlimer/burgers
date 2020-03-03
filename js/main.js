@@ -1,23 +1,67 @@
 // Всплывающее меню
 const burgerMenu = () => {
   const burgerMenu = document.querySelector('.burger-menu'),
-    burgerMenuBtn = document.querySelector('.burger-menu-btn'),
-    burgerMenuClose = document.querySelector('.burger-menu__close');
+    burgerMenuBtn = document.querySelector('.burger-menu-btn');
 
-  burgerMenuBtn.addEventListener('click', () => {
+  burgerMenuBtn.addEventListener('click', (event) => {
     event.preventDefault();
     burgerMenu.classList.add('burger-menu_active');
     document.body.style.overflow = 'hidden';
   });
 
-  burgerMenuClose.addEventListener('click', () => {
+  burgerMenu.addEventListener('click', (event) => {
     event.preventDefault();
-    burgerMenu.classList.remove('burger-menu_active');
-    document.body.style.overflow = 'visible';
+    let target = event.target;
+
+    console.log(target);
+
+    if (target.classList.contains('burger-menu__link') || target.closest('.burger-menu__close')) {
+      burgerMenu.classList.remove('burger-menu_active');
+      document.body.style.overflow = 'visible';
+    }
   });
 };
 
 burgerMenu();
+
+// Модальные окна
+const togglePopUpRevievs = () => {
+  const popUp = document.querySelectorAll('.popup'),
+    popUpBtn = document.querySelectorAll('.popup-button'),
+    popUpRevievs = document.querySelector('.popup-revievs');
+
+  popUpBtn.forEach((elem) => {
+    elem.addEventListener('click', (event) => {
+      event.preventDefault();
+      let target = event.target;
+
+      if (target.classList.contains('reviews__btn')) {
+        popUpRevievs.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
+
+  popUp.forEach((elem) => {
+    elem.addEventListener('click', (event) => {
+      event.preventDefault();
+      let target = event.target;
+
+      if (target.classList.contains('popup__close') || target.closest('.popup__close')) {
+        elem.style.display = 'none';
+        document.body.style.overflow = 'visible';
+      } else {
+        target = target.closest('.popup__content');
+        if (!target) {
+          elem.style.display = 'none';
+          document.body.style.overflow = 'visible';
+        }
+      }
+    });
+  });
+};
+
+togglePopUpRevievs();
 
 // Аккордеон Команда
 const accordeonTeam = () => {
@@ -170,45 +214,6 @@ const slider = () => {
 };
 
 slider();
-  
-// Модальные окна
-const togglePopUpRevievs = () => {
-  const popUp = document.querySelectorAll('.popup'),
-    popUpBtn = document.querySelectorAll('.popup-button'),
-    popUpRevievs = document.querySelector('.popup-revievs');
-
-  popUpBtn.forEach((elem) => {
-    elem.addEventListener('click', (event) => {
-      event.preventDefault();
-      let target = event.target;
-
-      if (target.classList.contains('reviews__btn')) {
-        popUpRevievs.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-      }
-    });
-  });
-
-  popUp.forEach((elem) => {
-    elem.addEventListener('click', (event) => {
-      event.preventDefault();
-      let target = event.target;
-
-      if (target.classList.contains('popup__close') || target.closest('.popup__close')) {
-        elem.style.display = 'none';
-        document.body.style.overflow = 'visible';
-      } else {
-        target = target.closest('.popup__content');
-        if (!target) {
-          elem.style.display = 'none';
-          document.body.style.overflow = 'visible';
-        }
-      }
-    });
-  });
-};
-
-togglePopUpRevievs();
 
 // Форма
 const sendForm = () => {

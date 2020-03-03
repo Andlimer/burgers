@@ -11,6 +11,7 @@
 <body>
   <div class="wrapper">
     <div class="main-content">
+
       <section class="section hero section_active">
         <header class="header">
           <div class="container header__container">
@@ -21,29 +22,29 @@
               <nav class="nav">
                 <ul class="nav__list">
                   <li class="nav__item">
-                    <a href="#" class="nav__link">О нас</a>
+                    <a href="#" class="nav__link" data-scroll-to="1">О нас</a>
                   </li>
                   <li class="nav__item">
-                    <a href="#" class="nav__link">Бургеры</a>
+                    <a href="#" class="nav__link" data-scroll-to="2">Бургеры</a>
                   </li>
                   <li class="nav__item">
-                    <a href="#" class="nav__link">Команда</a>
+                    <a href="#" class="nav__link" data-scroll-to="3">Команда</a>
                   </li>
                   <li class="nav__item">
-                    <a href="#" class="nav__link">Меню</a>
+                    <a href="#" class="nav__link" data-scroll-to="4">Меню</a>
                   </li>
                   <li class="nav__item">
-                    <a href="#" class="nav__link">Отзывы</a>
+                    <a href="#" class="nav__link" data-scroll-to="5">Отзывы</a>
                   </li>
                   <li class="nav__item">
                     <a href="#" class="nav__link">Как мы работаем</a>
                   </li>
                   <li class="nav__item">
-                    <a href="#" class="nav__link">Контакты</a>
+                    <a href="#" class="nav__link" data-scroll-to="7">Контакты</a>
                   </li>
                 </ul>
               </nav>
-              <a href="#submit" class="button">Заказать</a>
+              <a href="#submit" class="button" data-scroll-to="6">Заказать</a>
               <a href="#" class="burger-menu-btn">
                 <span class="burger-menu-btn__elem"></span>
               </a>
@@ -57,13 +58,14 @@
               <span class="hero__subtitle">натуральные <br> бургеры</span>
             </h1>
           </div>
-          <a href="#" class="hero__scroll-btn" aria-label="Прокрутка на следующую секцию">
+          <a href="#" class="hero__scroll-btn" data-scroll-to="1" aria-label="Прокрутка на следующую секцию">
             <svg class="hero__scroll-btn-icon">
               <use xlink:href="./img/sprite.svg#arrow-scroll"></use>
             </svg>
           </a>
         </div>
       </section>
+
       <section class="section about">
         <div class="container">
           <h2 class="title title_color_black title_center about__title">Мы лучшие</h2>
@@ -98,6 +100,7 @@
           </ul>
         </div>
       </section>
+
       <section class="section burgers">
         <div class="container burgers__container">
           <a href="#" class="burgers__arrow burgers__arrow_left">
@@ -581,6 +584,7 @@
           </a>
         </div>
       </section>
+
       <section class="section team">
         <div class="team__block">
           <h2 class="title team__title">Команда</h2>
@@ -636,6 +640,7 @@
           </ul>
         </div>
       </section>
+
       <section class="section menu">
         <h2 class="title title_color_white menu__title">Меню</h2>
         <ul class="menu-accordeon">
@@ -689,6 +694,7 @@
           </li> 
         </ul>
       </section>
+
       <section class="section reviews">
         <ul class="reviews__list">
           <li class="reviews__item">
@@ -781,6 +787,7 @@
           </li>
         </ul>
       </section>
+
       <section id='submit' class="section form-section">
         <div class="container">
           <h2 class="title title_center form-section__title">Закажите доставку</h2>
@@ -861,6 +868,7 @@
           </form>
         </div>
       </section>
+
       <section class="section map">
         <footer class="footer">
           <div class="container footer__container">
@@ -910,6 +918,7 @@
       </section>
     </div>
   </div>
+
   <!-- paginator -->
   <ul class="paginator">
     <li class="paginator__item paginator__item_active">
@@ -937,6 +946,7 @@
       <a href="#" class="paginator__dot" data-scroll-to="7" aria-label="Контакты"></a>
     </li>
   </ul>
+
   <!-- Полноэкранное меню -->
   <nav class="burger-menu">
     <svg class="burger-menu__logo-icon">
@@ -949,28 +959,29 @@
     </a>
     <ul class="burger-menu__list">
       <li class="burger-menu__item">
-        <a href="#" class="burger-menu__link">О нас</a>
+        <a href="#" class="burger-menu__link" data-scroll-to="1">О нас</a>
       </li>
       <li class="burger-menu__item">
-        <a href="#" class="burger-menu__link">Бургеры</a>
+        <a href="#" class="burger-menu__link" data-scroll-to="2">Бургеры</a>
       </li>
       <li class="burger-menu__item">
-        <a href="#" class="burger-menu__link">Команда</a>
+        <a href="#" class="burger-menu__link" data-scroll-to="3">Команда</a>
       </li>
       <li class="burger-menu__item">
-        <a href="#" class="burger-menu__link">Меню</a>
+        <a href="#" class="burger-menu__link" data-scroll-to="4">Меню</a>
       </li>
       <li class="burger-menu__item">
-        <a href="#" class="burger-menu__link">Отзывы</a>
+        <a href="#" class="burger-menu__link" data-scroll-to="5">Отзывы</a>
       </li>
       <li class="burger-menu__item">
         <a href="#" class="burger-menu__link">Как мы работаем</a>
       </li>
       <li class="burger-menu__item">
-        <a href="#" class="burger-menu__link">Контакты</a>
+        <a href="#" class="burger-menu__link" data-scroll-to="7">Контакты</a>
       </li>
     </ul>
   </nav>
+
   <!-- modal -->
   <div class="popup popup-modal">
     <div class="popup__content popup-modal__content">
@@ -978,6 +989,7 @@
       <button class="button popup__close popup-modal__button">Закрыть</button>
     </div>
   </div>
+
   <!-- reviews-popup -->
   <div class="popup popup-revievs">
     <div class="popup__content popup-revievs__content">
@@ -990,6 +1002,7 @@
       <p class="popup-revievs__text">Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал, что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным. Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал, что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным.</p>
     </div>
   </div>
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.3.6/mobile-detect.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>

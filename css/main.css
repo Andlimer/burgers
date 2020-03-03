@@ -616,6 +616,10 @@ table {
   text-decoration: none;
 }
 
+.nav__link:hover {
+  text-decoration: underline;
+}
+
 .hero {
   background-image: url("../img/bg/hero-bg-texture.png"), url("../img/bg/hero-bg.jpg");
   background-position: center;

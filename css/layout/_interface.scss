@@ -69,6 +69,13 @@ table {
   max-width: 940px;
   width: 92%;
   margin: 0 auto;
+
+  @include tablets {
+    &_mobile {
+      margin: 0;
+      width: 100%;
+    }
+  }
 }
 
 .section {

@@ -37,14 +37,14 @@
                     <a href="#" class="nav__link" data-scroll-to="5">Отзывы</a>
                   </li>
                   <li class="nav__item">
-                    <a href="#" class="nav__link">Как мы работаем</a>
+                    <a href="#" class="nav__link" data-scroll-to="6">Как мы работаем</a>
                   </li>
                   <li class="nav__item">
-                    <a href="#" class="nav__link" data-scroll-to="7">Контакты</a>
+                    <a href="#" class="nav__link" data-scroll-to="8">Контакты</a>
                   </li>
                 </ul>
               </nav>
-              <a href="#submit" class="button" data-scroll-to="6">Заказать</a>
+              <a href="#" class="button" data-scroll-to="7">Заказать</a>
               <a href="#" class="burger-menu-btn">
                 <span class="burger-menu-btn__elem"></span>
               </a>
@@ -199,7 +199,7 @@
                   <p class="slider__text">Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками нежнейшего сыра эмменталь, двумя помидорами, луком, салатом и соусом гриль теперь с добавлением экзотического соуса чураско.</p>
                   <div class="slider__order">
                     <span class="slider__price"><span class="slider__money">500</span>рублей</span>
-                    <a href="#submit" class="button">Заказать</a>
+                    <a href="#" class="button" data-scroll-to="7">Заказать</a>
                   </div>
                 </div>
               </li>
@@ -292,7 +292,7 @@
                   <p class="slider__text">Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками нежнейшего сыра эмменталь, двумя помидорами, луком, салатом и соусом гриль теперь с добавлением экзотического соуса чураско.</p>
                   <div class="slider__order">
                     <span class="slider__price"><span class="slider__money">500</span>рублей</span>
-                    <a href="#submit" class="button">Заказать</a>
+                    <a href="#" class="button" data-scroll-to="7">Заказать</a>
                   </div>
                 </div>
               </li>
@@ -385,7 +385,7 @@
                   <p class="slider__text">Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками нежнейшего сыра эмменталь, двумя помидорами, луком, салатом и соусом гриль теперь с добавлением экзотического соуса чураско.</p>
                   <div class="slider__order">
                     <span class="slider__price"><span class="slider__money">500</span>рублей</span>
-                    <a href="#submit" class="button">Заказать</a>
+                    <a href="#" class="button" data-scroll-to="7">Заказать</a>
                   </div>
                 </div>
               </li>
@@ -478,7 +478,7 @@
                   <p class="slider__text">Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками нежнейшего сыра эмменталь, двумя помидорами, луком, салатом и соусом гриль теперь с добавлением экзотического соуса чураско.</p>
                   <div class="slider__order">
                     <span class="slider__price"><span class="slider__money">500</span>рублей</span>
-                    <a href="#submit" class="button">Заказать</a>
+                    <a href="#" class="button" data-scroll-to="7">Заказать</a>
                   </div>
                 </div>
               </li>
@@ -571,7 +571,7 @@
                   <p class="slider__text">Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками нежнейшего сыра эмменталь, двумя помидорами, луком, салатом и соусом гриль теперь с добавлением экзотического соуса чураско.</p>
                   <div class="slider__order">
                     <span class="slider__price"><span class="slider__money">500</span>рублей</span>
-                    <a href="#submit" class="button">Заказать</a>
+                    <a href="#" class="button" data-scroll-to="7">Заказать</a>
                   </div>
                 </div>
               </li>
@@ -788,6 +788,11 @@
         </ul>
       </section>
 
+      <section class="section work">
+        <h2 class="title title_color_black work__title">как мы работаем</h2>
+        
+      </section>
+
       <section id='submit' class="section form-section">
         <div class="container">
           <h2 class="title title_center form-section__title">Закажите доставку</h2>
@@ -870,6 +875,7 @@
       </section>
 
       <section class="section map">
+        <div id="map" style="width: 100%; height: 100%"></div>
         <footer class="footer">
           <div class="container footer__container">
             <div class="footer__left">
@@ -940,10 +946,13 @@
       <a href="#" class="paginator__dot" data-scroll-to="5" aria-label="Отзывы"></a>
     </li>
     <li class="paginator__item">
-      <a href="#" class="paginator__dot" data-scroll-to="6" aria-label="Заказать доставку"></a>
+      <a href="#" class="paginator__dot" data-scroll-to="6" aria-label="Как мы работаем"></a>
     </li>
     <li class="paginator__item">
-      <a href="#" class="paginator__dot" data-scroll-to="7" aria-label="Контакты"></a>
+      <a href="#" class="paginator__dot" data-scroll-to="7" aria-label="Заказать доставку"></a>
+    </li>
+    <li class="paginator__item">
+      <a href="#" class="paginator__dot" data-scroll-to="8" aria-label="Контакты"></a>
     </li>
   </ul>
 
@@ -1006,6 +1015,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.3.6/mobile-detect.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=806e4cc2-bdc0-404b-a70e-2ebcb7210aa0&lang=ru_RU" type="text/javascript"></script>
   <script src="./js/main.js"></script>
 </body>
 </html>

@@ -315,6 +315,50 @@ const sendForm = () => {
 
 sendForm();
 
+// Карта
+ymaps.ready(function () {
+
+  var myMap = new ymaps.Map('map', {
+    center: [43.10890712, 131.90497327],
+    zoom: 14
+  });
+
+  myPlacemark1 = new ymaps.Placemark([43.118600, 131.882764], {
+    hintContent: 'Приход к нам',
+  }, {
+      iconLayout: 'default#image',
+      iconImageHref: './img/icons/map-marker.svg',
+      iconImageSize: [48, 60],
+  });
+
+  myPlacemark2 = new ymaps.Placemark([43.100365, 131.903451], {
+    hintContent: 'Приход к нам',
+  }, {
+      iconLayout: 'default#image',
+      iconImageHref: './img/icons/map-marker.svg',
+      iconImageSize: [48, 60],
+  });
+
+  myPlacemark3 = new ymaps.Placemark([43.113680, 131.895411], {
+    hintContent: 'Приход к нам',
+  }, {
+      iconLayout: 'default#image',
+      iconImageHref: './img/icons/map-marker.svg',
+      iconImageSize: [48, 60],
+  });
+
+  myMap.geoObjects
+    .add(myPlacemark1)
+    .add(myPlacemark2)
+    .add(myPlacemark3);
+
+  myMap.controls.remove('searchControl');
+  myMap.controls.remove('fullscreenControl');
+  myMap.controls.remove('trafficControl');
+  myMap.controls.remove('typeSelector');
+  myMap.behaviors.disable('scrollZoom');
+});
+
 // OnePageScroll
 const section =$('.section');
 const display = $('.main-content');
@@ -413,7 +457,7 @@ $('[data-scroll-to]').on('click', e => {
 });
 
 if (isMobile) {
-  $('body').swipe( {
+  $('body').swipe({
     swipe:function(event,
       direction,
       distance,

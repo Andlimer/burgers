@@ -445,3 +445,9 @@ $('[data-scroll-to]').on('click', e => {
 
   performTransition(target);
 });
+
+$("body").swipe({
+  swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+    alert(direction);
+  }
+});

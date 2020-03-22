@@ -360,114 +360,88 @@ ymaps.ready(function () {
 });
 
 // OnePageScroll
-const section =$('.section');
+const sections = $('.section');
 const display = $('.main-content');
 let inScroll = false;
 
-const mobileDetect = new MobileDetect(window.navigator.userAgent);
-const isMobile = mobileDetect.mobile();
-
 const performTransition = sectionEq => {
-  if (inScroll) return;
+  if (inScroll === false) {
+    inScroll = true;
 
-  inScroll = true;
+    const position = sectionEq * -100;
 
-  const transitionIsOver = 1000;
-  const position = sectionEq * -100;
-
-  if (isNaN(position)) 
-    console.error('Передано не верное значение performTransition');
-
-  section
-    .eq(sectionEq)
-    .addClass('section_active')
-    .siblings()
-    .removeClass('section_active');
-
-  display.css({
-    transform: `translateY(${position}%)`
-  });
-
-  setTimeout(() => {
-    inScroll = false
-    
-    $('.paginator__item')
+    sections
       .eq(sectionEq)
-      .addClass('paginator__item_active')
+      .addClass('section_active')
       .siblings()
-      .removeClass('paginator__item_active');
+      .removeClass('section_active');
 
-  }, transitionIsOver);
-}
+    display.css({
+      transform: `translateY(${position}%)`
+    });
 
-const scroller = () => {
-  const activeSection = section.filter('.section_active'),
-    nextSection = activeSection.next(),
-    prevSection = activeSection.prev();
+    setTimeout(() => {
+      inScroll = false
 
-  return {
-    next() {
-      if (nextSection.length) 
-        performTransition(nextSection.index());
-    },
-    prev() {
-      if (prevSection.length) 
-        performTransition(prevSection.index());
-    }
+      $('.paginator__item')
+        .eq(sectionEq)
+        .addClass('paginator__item_active')
+        .siblings()
+        .removeClass('paginator__item_active');
+
+    }, 1000);
   }
-}
+};
+
+const scrollToSection = direction => {
+  const activeSection = sections.filter('.section_active');
+  const nextSection = activeSection.next();
+  const prevSection = activeSection.prev();
+
+  if (direction === 'next' && nextSection.length) {
+    performTransition(nextSection.index());
+  }
+
+  if (direction === 'prev' && prevSection.length) {
+    performTransition(prevSection.index());
+  }
+};
 
 $(window).on('wheel', e => {
-  const deltaY = e.originalEvent.deltaY;
-  const windowScroller = scroller();
+  const deltaY = e.originalEvent.deltaY
+
+  console.log('wheel');
 
   if (deltaY > 0) {
-    windowScroller.next();
-  }
-
+    scrollToSection('next');
+  } 
+  
   if (deltaY < 0) {
-    windowScroller.prev();
+    scrollToSection('prev');
   }
 });
 
 $(window).on('keydown', e => {
   const tagName = e.target.tagName.toLowerCase();
-  const userTypingInInputs = tagName === 'input' || tagName === 'textarea';
-  const windowScroller = scroller();
 
-  if (userTypingInInputs) return;
-
-  switch(e.keyCode) {
-    case 38:
-      windowScroller.prev();
-      break;
-    case 40:
-      windowScroller.next();
-      break;
+  if (tagName !== 'input' && tagName !== 'textarea') {
+    switch(e.keyCode) {
+      case 38:
+        scrollToSection('prev');
+        break;
+      case 40:
+        scrollToSection('next');
+        break;
+    }
   }
-  
+  // console.log(e.keyCode);
 });
 
 $('[data-scroll-to]').on('click', e => {
   e.preventDefault();
+
   const $this = $(e.currentTarget);
   const target = $this.attr('data-scroll-to');
 
   performTransition(target);
 });
-
-if (isMobile) {
-  $('body').swipe({
-    swipe:function(event,
-      direction,
-      distance,
-      duration,
-      fingerCount,
-      fingerData
-    ) {
-      const scrollDirections = direction === 'up' ? 'next' : 'prev';
-  
-      scroller(scrollDirections);
-    }
-  });
-}

@@ -437,13 +437,6 @@ table {
   margin: 0 auto;
 }
 
-@media screen and (max-width: 960px) {
-  .container_mobile {
-    margin: 0;
-    width: 100%;
-  }
-}
-
 .section {
   display: -webkit-box;
   display: -ms-flexbox;

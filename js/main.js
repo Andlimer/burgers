@@ -447,7 +447,16 @@ $('[data-scroll-to]').on('click', e => {
 });
 
 $("body").swipe({
-  swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
-    alert(direction);
+  swipe: function(
+    event,
+    direction,
+    distance,
+    duration,
+    fingerCount,
+    fingerData
+  ) {
+    const scrollDirections = direction === 'up' ? 'next' : 'prev';
+    scrollToSection(scrollDirections);
+    // alert(scrollDirections);
   }
 });

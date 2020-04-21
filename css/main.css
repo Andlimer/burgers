@@ -1627,6 +1627,119 @@ table {
   background-size: cover;
 }
 
+.work__title {
+  margin-bottom: 3.125rem;
+}
+
+.player {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.player__wrapper {
+  position: relative;
+  width: 41.25rem;
+}
+
+.player__video {
+  width: 100%;
+}
+
+.player__btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.player__btn-icon {
+  width: 82px;
+  height: 118px;
+  fill: #fff;
+  opacity: 0.9;
+}
+
+.player__controls {
+  position: absolute;
+  bottom: -1.90625rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 7px 20px;
+  width: 100%;
+  height: 35px;
+  background-color: #3e3e3e;
+}
+
+.player__play-pause,
+.player__volume {
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 1.25rem;
+}
+
+.player__btn-play {
+  fill: #626262;
+  width: 1.0625rem;
+  height: 1.375rem;
+}
+
+.player__btn-volume {
+  fill: #626262;
+  width: 1.125rem;
+  height: 1.375rem;
+}
+
+.player__range {
+  -webkit-appearance: none;
+  height: 0.25rem;
+  background-color: #626262;
+  outline: none;
+}
+
+.player__range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 0.75rem;
+  height: 0.8125rem;
+  background-color: #626262;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.player__range::-moz-range-thumb {
+  width: 0.75rem;
+  height: 0.8125rem;
+  background-color: #626262;
+  border-color: #626262;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.player__time-line {
+  margin-right: 2.8125rem;
+  width: 100%;
+}
+
+.player__volume-line {
+  width: 3.75rem;
+}
+
 .form-section {
   background: url("../img/bg/form-bg.jpg");
   background-position: center;

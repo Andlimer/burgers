@@ -465,3 +465,36 @@ if (isMobile) {
     }
   });
 }
+
+// Player
+const player = document.querySelector('.player'),
+  video = document.getElementById('video'),
+  playerBtn = document.querySelector('.player__btn'),
+  voluemMuted = document.querySelector('.player__volume'),
+  volumeControl = document.getElementById('volume');
+
+player.addEventListener('click', (event) => {
+  event.preventDefault();
+
+  let target = event.target;
+
+  if (target.closest('.player__btn') || target.closest('.player__play-pause')) {
+    if (video.paused) {
+      video.play();
+      playerBtn.style.opacity = "0";
+    } else {
+      video.pause();
+      playerBtn.style.opacity = ".9";
+    }
+  }
+});
+
+// ProgressBar
+video.addEventListener('play', () => {
+
+});
+
+// Volume
+volumeControl.addEventListener('input', () => {
+	video.volume = volumeControl.value;
+}, false);

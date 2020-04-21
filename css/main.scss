@@ -2,6 +2,8 @@ $black: #2f3234;
 $white: #fff;
 $yellow: #f9b43b;
 $orange: #eb8c38;
+$grey: #3e3e3e;
+$light-grey: #626262;
 $button-color: #e45028;
 
 @import 'layout/normalize';
@@ -22,6 +24,7 @@ $button-color: #e45028;
 @import 'blocks/menu';
 @import 'blocks/reviews';
 @import 'blocks/work';
+@import 'blocks/player';
 @import 'blocks/form-section';
 @import 'blocks/social';
 @import 'blocks/footer';

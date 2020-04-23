@@ -1648,6 +1648,18 @@ table {
   width: 41.25rem;
 }
 
+@media screen and (max-width: 960px) {
+  .player__wrapper {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .player__wrapper {
+    width: 95%;
+  }
+}
+
 .player__video {
   width: 100%;
 }
@@ -1665,6 +1677,13 @@ table {
   height: 118px;
   fill: #fff;
   opacity: 0.9;
+}
+
+@media screen and (max-width: 960px) {
+  .player__btn-icon {
+    width: 30%;
+    height: 30%;
+  }
 }
 
 .player__controls {
@@ -1692,6 +1711,12 @@ table {
       -ms-flex-align: center;
           align-items: center;
   margin-right: 1.25rem;
+}
+
+@media screen and (max-width: 960px) {
+  .player__volume {
+    display: none;
+  }
 }
 
 .player__btn-play {
@@ -1738,6 +1763,12 @@ table {
 
 .player__volume-line {
   width: 3.75rem;
+}
+
+@media screen and (max-width: 960px) {
+  .player__volume-line {
+    display: none;
+  }
 }
 
 .form-section {

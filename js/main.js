@@ -471,6 +471,7 @@ const player = document.querySelector('.player'),
   video = document.getElementById('video'),
   playerBtn = document.querySelector('.player__btn'),
   voluemMuted = document.querySelector('.player__volume'),
+  timelineControl = document.getElementById('timeline'),
   volumeControl = document.getElementById('volume');
 
 player.addEventListener('click', (event) => {
@@ -489,8 +490,24 @@ player.addEventListener('click', (event) => {
   }
 });
 
-// ProgressBar
+// Time
 video.addEventListener('play', () => {
+  let interval;
+
+  if (typeof interval !== 'undefined') {
+    clearInterval(interval);
+  }
+
+  interval = setInterval(() => {
+    let compleatedSec = video.currentTime;
+
+    timelineControl.value = compleatedSec;
+  
+  }, 1000);
+
+  timelineControl.addEventListener('input', () => {
+    video.currentTime = timelineControl.value;
+  });
 
 });
 

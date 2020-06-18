@@ -1047,8 +1047,6 @@ table {
   background-color: #fff;
   color: #2f3234;
   border-radius: 0.3125rem;
-  -webkit-transform: translateX(-62499.9375rem);
-          transform: translateX(-62499.9375rem);
   opacity: 0;
   -webkit-transition: opacity .4s;
   transition: opacity .4s;
@@ -1062,8 +1060,6 @@ table {
 
 .composition__button:hover ~
 .composition__content {
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
   opacity: .9;
 }
 

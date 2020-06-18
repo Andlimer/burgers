@@ -490,7 +490,7 @@ player.addEventListener('click', (event) => {
   }
 });
 
-// Time
+// Timeline
 video.addEventListener('play', () => {
   let interval;
 
@@ -502,7 +502,6 @@ video.addEventListener('play', () => {
     let compleatedSec = video.currentTime;
 
     timelineControl.value = compleatedSec;
-  
   }, 1000);
 
   timelineControl.addEventListener('input', () => {
